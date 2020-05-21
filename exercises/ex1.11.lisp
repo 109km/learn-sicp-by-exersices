@@ -14,7 +14,7 @@
 ;; This process is defined by 4 parameters.
 (defun _f_iteration_loop(n1 n2 n3 count)
   (if 
-    (= count 2) n1 ;; This round is actually calculating f(n+1), so n1 = f(n)
+    (= count 2) n1 ; This round is actually calculating f(n+1), so n1 = f(n)
     (_f_iteration_loop
       (+ n1 (* 2 n2) (* 3 n3))
       n1
