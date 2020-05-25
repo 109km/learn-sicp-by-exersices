@@ -4,4 +4,22 @@ When the amount increases, what are the orders of the space and steps in this ca
 
 ![/pics/ex1.14.png](/pics/ex1.14.png)
 
-The steps order is O(n^2), the space order is O(n).
+
+Let's analyze the order of space:
+
+the space of a recursive process depends on the depth of this process, in another word, what are the largest times that the recursive function are called.
+
+The deepest recursion is n, so the space order is O(n).
+
+
+Then let's analyze the order of time:
+
+the time means how many steps are executed during the whole process.
+
+From the graph we can find that `number of steps = number of nodes`.
+
+To a binary tree `nodes = left nodes + right nodes + 1`
+
+
+
+
