@@ -21,6 +21,16 @@
 (defun halfFn(n)
   (_half n 0)
 )
+
+(defun remainder(n m)
+  (if (< n m) n
+    (remainder (- n m) m)
+  )
+)
+
+(defun even(n)
+  (= (remainder n 2) 0)
+)
 (defun fast_expt(b n)
   (cond 
     ((= n 0)
@@ -29,10 +39,20 @@
     ((= n 1)
       b
     )
-    ((> n 1)
+    (
+      (and (> n 1) (even n))
       (fast_expt 
-        (multiply b b) 
+        (multiply b b)
         (halfFn n)
+      )
+    )
+    (t
+      (* 
+        (fast_expt 
+          (multiply b b)
+          (halfFn n)
+        )
+        b
       )
     )
   )
@@ -41,4 +61,4 @@
 
 ;; (print (multiply 2 3))
 ;; (print (halfFn 7))
-(print (fast_expt 2 3))
+(print (fast_expt 2 4))
