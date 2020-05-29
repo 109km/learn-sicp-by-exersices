@@ -17,7 +17,6 @@
     (t
       (find_divisor n (+ test_divisor 1))
     )
-  
   )
 )
 
