@@ -31,4 +31,4 @@
   )
 )
 
-(print (multiplyFn 3 5))
+(print (multiplyFn 7 5))
