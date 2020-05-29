@@ -4,7 +4,7 @@ How many times that the function remainder are excuted?
 
 ![ex1.20.png](../pics/ex1.20.png)
 
-The `remainder` are excuted 6 times.
+The `remainder` are excuted 18 times.
 
 If the calculating process is in applicative order,
 the `remainder` will be excuted 4 times.
