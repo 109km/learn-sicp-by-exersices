@@ -20,6 +20,14 @@
   )
 )
 
+(defun isDivided(n m)
+  (= (remainder n m) 0)
+)
+
+
+(defun square(n)
+  (* n n)
+)
 (defun even(n)
   (= (remainder n 2) 0)
 )
