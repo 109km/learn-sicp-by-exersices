@@ -15,7 +15,8 @@
 )
 
 (defun remainder(n m)
-  (if (< n m) n
+  (if 
+    (< n m) n
     (remainder (- n m) m)
   )
 )

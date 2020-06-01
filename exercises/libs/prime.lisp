@@ -10,7 +10,7 @@
     )
     ;; n can be divided by test_divisor
     (
-      (isDivided test_divisor n)
+      (isDivided n test_divisor)
       test_divisor
     )
     ;; keep finding
