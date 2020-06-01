@@ -24,6 +24,6 @@
   (find_divisor n 2)
 )
 
-(defun prime(n)
+(defun prime?(n)
   (= n (smallest_divisor n))
 )

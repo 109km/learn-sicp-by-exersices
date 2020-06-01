@@ -1,16 +1,29 @@
-
-(defun sum_interger(n)
+(defun integer2(n) 
   n
 )
-(defun sum_interger_next(n)
+
+(defun add1(n)
   (+ n 1)
 )
 
 (defun accumulate(fn next a b)
   (if (> a b)
     0
-    (+ (fn a) (fn (next a) b))
+    (+
+      (funcall fn a) 
+      (accumulate
+        fn
+        next
+        (funcall next a)
+        b
+      )
+    )
   )
 )
 
-(print (accumulate (function sum_interger) (function sum_interger_next) 1 10))
+(defun sum_interger(a b)
+  (accumulate #'integer2 #'add1 a b)
+)
+
+
+(print (sum_interger 1 10))
