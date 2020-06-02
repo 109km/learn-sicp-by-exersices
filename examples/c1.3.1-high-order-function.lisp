@@ -5,6 +5,9 @@
 (defun add1(n)
   (+ n 1)
 )
+(defun cube(n)
+  (* n n n)
+)
 
 (defun accumulate(fn next a b)
   (if (> a b)
@@ -25,5 +28,6 @@
   (accumulate #'integer2 #'add1 a b)
 )
 
-
-(print (sum_interger 1 10))
+(defun sum_cube(a b)
+  (accumulate #'cube #'add1 a b)
+)
