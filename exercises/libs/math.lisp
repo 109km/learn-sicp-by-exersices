@@ -32,3 +32,7 @@
 (defun even(n)
   (= (remainder n 2) 0)
 )
+
+(defun cube(n)
+  (* n n n)
+)
