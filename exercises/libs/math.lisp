@@ -25,14 +25,19 @@
   (= (remainder n m) 0)
 )
 
-
+(defun integral(n)
+  n
+)
 (defun square(n)
   (* n n)
 )
 (defun even(n)
   (= (remainder n 2) 0)
 )
-
 (defun cube(n)
   (* n n n)
+)
+
+(defun add1(n)
+  (+ n 1)
 )
