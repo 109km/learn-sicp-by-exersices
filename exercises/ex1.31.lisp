@@ -27,7 +27,10 @@
         (if (> a b) result
           (iter 
             (funcall next a)
-            (* a result)
+            (* 
+              (funcall f a) 
+              result
+            )
           )
         )
       )
@@ -35,5 +38,24 @@
     (iter a 1)
   )
 )
+
+(defun product_pi(x)
+  (labels
+    (
+      (item_pi (n)
+        (if 
+          (even n) (/ n (+ n 1))
+          (/ (+ n 1) n)
+        )
+      ) 
+    )
+    (* 
+      2
+      (product_iterative #'item_pi #'add1 1 x)
+    )
+  ) 
+)
+
 (print (product_iterative #'integral #'add1 1 5))
 (print (product_recursive #'integral #'add1 1 5))
+(print (product_pi 20))
