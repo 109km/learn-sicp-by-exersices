@@ -20,3 +20,25 @@
   )
 )
 
+(defun accumulate_recursive(combiner null-value term next a b)
+  (labels 
+    (iter
+      (a result)
+      (
+        (if 
+          (> a b) result
+          (iter
+            (funcall next a)
+            (funcall 
+              combiner
+              (funcall next a)
+              result
+            )
+          )
+        )
+      )
+    )
+    (iter a null-value)
+  )
+)
+
