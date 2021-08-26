@@ -1,8 +1,7 @@
-(defun repeat (n max f)
-  (funcall f n)
+(defun repeat (start end f)
+  (funcall f start)
   (if 
-    (< n max) (repeat (+ 1 n) max f)
-    (print "loop end")
+    (< start end) (repeat (+ 1 start) end f)
   )
 )
 
@@ -10,4 +9,4 @@
   (print n)
 )
 
-(repeat 0 10 #'fp)
+(repeat 1 10 #'fp)
