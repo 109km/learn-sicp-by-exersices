@@ -2,9 +2,6 @@
 
 (load "./exercises/libs/math.lisp")
 
-(defun add1(n)
-  (+ n 1)
-)
 (defun accumulate-iterative(fn next a b)
   (labels
     (

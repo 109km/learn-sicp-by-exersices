@@ -20,18 +20,18 @@
   )
 )
 
-(defun accumulate_recursive(combiner null-value term next a b)
+(defun accumulate_iterative(combiner null-value term next a b)
   (labels 
-    (iter
-      (a result)
-      (
+    (
+      (iter 
+        (a result)
         (if 
           (> a b) result
           (iter
             (funcall next a)
             (funcall 
               combiner
-              (funcall next a)
+              (funcall term a)
               result
             )
           )
@@ -42,3 +42,5 @@
   )
 )
 
+(print (accumulate_iterative #'add 0 #'cube #'add1 1 10))
+(print (accumulate_recursive #'add 0 #'cube #'add1 1 10))

@@ -38,6 +38,11 @@
   (* n n n)
 )
 
+(defun add(a b)
+  (+ a b)
+)
+
+
 (defun add1(n)
   (+ n 1)
 )
