@@ -12,18 +12,32 @@
 (defun filtered_accumulate_recursive(combiner null-value term next a b filter)
   (if 
     (> a b) null-value
-    (funcall 
-      combiner
-      (funcall term a)
-      (accumulate_recursive 
+    (if 
+      (> (funcall filter (funcall term a)) 0) 
+      (funcall 
+        combiner
+        (funcall term a)
+        (filtered_accumulate_recursive 
+          combiner 
+          null-value 
+          term 
+          next 
+          (funcall next a) 
+          b
+          filter
+        )
+      )
+      (filtered_accumulate_recursive 
         combiner 
         null-value 
         term 
         next 
         (funcall next a) 
         b
+        filter
       )
     )
+    
   )
 )
 
@@ -53,3 +67,4 @@
 )
 
 (print (filtered_accumulate_iterative #'add 0 #'cube #'add1 1 10 #'filter))
+(print (filtered_accumulate_recursive #'add 0 #'cube #'add1 1 10 #'filter))
