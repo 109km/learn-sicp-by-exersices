@@ -1,5 +1,5 @@
-;;;; Write a function called `accumulate`
-;;;; (accumulate combiner null-value term next a b)
+;;;; Write a function called `filtered_accumulate` that support `filter`.
+;;;; (filtered_accumulate combiner null-value term next a b filter)
 (load "./exercises/libs/math.lisp")
 
 (defun filter(termA)
