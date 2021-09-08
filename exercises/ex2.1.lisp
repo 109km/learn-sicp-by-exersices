@@ -37,4 +37,4 @@
     )
   )
 )
-(print (make-rat 2 -3))
+(print (make-rat 4 -6))
