@@ -57,4 +57,13 @@
   )
 )
 
-(print (midpoint-segment (make-segment (make-point 1 1) (make-point 4 4))))
+(defun print-point(p)
+  (terpri)
+  (princ "(")
+  (princ (x-point p))
+  (princ ",")
+  (princ (y-point p))
+  (princ ")")
+)
+
+(print-point (midpoint-segment (make-segment (make-point 1 1) (make-point 4 4))))
