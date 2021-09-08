@@ -35,24 +35,26 @@
       (mid-y 0)
     )
     (setq mid-x
-      (halfFn 
+      (/ 
         (+ 
           (x-point (make-start segment))
           (x-point (make-end segment)) 
         )
+        2
       )
     )
     (setq 
       mid-y
-      (halfFn 
+      (/ 
         (+ 
           (y-point (make-start segment))
           (y-point (make-end segment)) 
         )
+        2
       )
     )
     (cons mid-x mid-y)
   )
 )
 
-(print (midpoint-segment (make-segment (make-point 0 0) (make-point 2 3))))
+(print (midpoint-segment (make-segment (make-point 1 1) (make-point 4 4))))
