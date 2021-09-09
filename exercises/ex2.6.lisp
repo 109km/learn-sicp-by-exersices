@@ -1,6 +1,3 @@
-(load "./exercises/libs/math.lisp")
-
-
 (defun zero()
   (lambda (f)
     (lambda (x) x)
@@ -16,20 +13,33 @@
 )
 
 (defun one()
+  (add1 #'zero)
+)
+
+(defun two()
+  (add1 #'one)
+)
+
+(defun my-add(m n)
   (lambda (f)
     (lambda (x)
-      (funcall f (funcall f x))
+      (print x)
+      (funcall 
+        (funcall m f)
+        (funcall (funcall n f) x)
+      )
     )
   )
 )
 
+
 (print 
-  (funcall 
+  (funcall
     (funcall 
-      (funcall #'zero) 
-      100
+      (my-add #'one #'two)
+      #'add1
     )
-    0
-  ) 
+    1
+  )
+  
 )
-;; (print (add-one #'one))
