@@ -19,7 +19,6 @@
   )
 )
 
-;; 
 (defun rectangle-left(rectangle)
   (car rectangle)
 )
