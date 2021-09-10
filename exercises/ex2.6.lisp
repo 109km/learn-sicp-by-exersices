@@ -10,7 +10,7 @@
 ;; `n` is the function of number
 ;; (n f) means do action `f` for `n` times
 ;; so `add1` means one more `f`
-(defun add1(n)
+(defun add-one(n)
   (lambda (f)
     (lambda (x) 
       (print x)
@@ -34,7 +34,11 @@
 )
 
 (defun two()
-  (add1 #'one)
+  (add-one #'one)
+)
+
+(defun add1(x)
+  (+ x 1)
 )
 
 (defun my-add(m n)
@@ -53,7 +57,7 @@
 (print 
   (funcall 
     (funcall
-      (add1 #'zero) 
+      (add-one #'zero) 
       #'add1
     )
     0
