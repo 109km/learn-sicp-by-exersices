@@ -13,7 +13,6 @@
 (defun add-one(n)
   (lambda (f)
     (lambda (x) 
-      (print x)
       (funcall 
         f 
         (funcall 
@@ -41,6 +40,11 @@
   (+ x 1)
 )
 
+(defun add2(x)
+  (+ x 2)
+)
+
+
 (defun my-add(m n)
   (lambda (f)
     (lambda (x)
@@ -57,9 +61,9 @@
 (print 
   (funcall 
     (funcall
-      (add-one #'zero) 
-      #'add1
+      (add-one #'two) ;; return a function of three times
+      #'add2 ;; excute `add2` for 3 times
     )
-    0
+    0 ;; initial value is 0
   )
 )
