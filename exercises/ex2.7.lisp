@@ -54,3 +54,7 @@
     )
   )
 )
+
+(defun width(x)
+  (/ 2.0 (- (upper-bound x) (lower-bound x)))
+)
